@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML-Based Component Health monitoring - Space System | Shaantanu Iyengar</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Shared Stylesheet with Cache Buster -->
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-brand">
+                <span class="logo-text" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.5px; color: var(--indigo-600); font-weight: 600;">SYSTEMS &bull; ELECTRONICS &bull; SPACE</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">&larr; Back to Portfolio</a>
+                <a href="Shaantanu_Iyengar_CV.pdf" download="Shaantanu_Iyengar_CV.pdf" class="nav-item" style="color: var(--indigo-600); font-weight: 600;">Download CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Case Study Header -->
+    <section class="case-study-header">
+        <div class="page-container">
+            <a href="index.html" class="back-link">&larr; BACK TO PORTFOLIO</a>
+            <span class="mono-label accent-text mb-2" style="display:block;">PROJECT DETAILS &bull; PREDICTIVE ANALYTICS</span>
+            <h1 class="hero-h1 mb-4">ML-Based Component Health monitoring - Space System</h1>
+            <p class="hero-subtitle">Object-oriented predictive modelling pipeline designed to predict component failure timelines in space systems.</p>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="section-bleed">
+        <div class="page-container">
+            <div class="case-study-grid">
+                
+                <!-- Main Narrative -->
+                <div class="case-study-body">
+                    <section>
+                        <h3>1. Project Background &amp; Motivation</h3>
+                        <p class="body-p">
+                            Space platforms demand predictive failure detection due to zero physical maintenance access post-launch. Under condition-based maintenance strategies, hardware sensors must be analysed in real time to diagnose degradation patterns.
+                        </p>
+                        <p class="body-p">
+                            I designed an object-oriented Python system for ML-based component health prognostics. The system targets predictive failure detection in space assets, validated on NASA’s C-MAPSS turbofan engine degradation dataset as a proof of concept.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>2. Machine Learning Pipeline Architecture</h3>
+                        <p class="body-p">
+                            The project builds a multi-stage machine learning pipeline to predict continuous component failure timelines (regression) and detect early-stage degradation windows (classification) across multidimensional sensor data:
+                        </p>
+                        <ul class="bullet-list">
+                            <li class="bullet-item"><strong>Feature Engineering:</strong> Mapped and standardised 21 sensor channels and 3 operational setting variables to normalize across varying pressure ratios and fan speeds.</li>
+                            <li class="bullet-item"><strong>Pipeline Modularization:</strong> Built using object-oriented Python modules, dividing processes into data loader class files, estimator models, and CV validation frameworks.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>3. Hyperparameter Optimisation &amp; Metrics</h3>
+                        <p class="body-p">
+                            To ensure high prediction precision, I trained Random Forest regression models, executing cross-validation and hyperparameter tuning:
+                        </p>
+                        <ul class="bullet-list">
+                            <li class="bullet-item"><strong>Grid Search CV:</strong> Tuned hyperparameters (such as decision tree depth, leaf configuration sizes, and estimator quantities) via grid search to prevent overfitting.</li>
+                            <li class="bullet-item"><strong>MSE Reduction:</strong> Hyperparameter tuning cut overall failure prediction error by <span class="highlight">15%</span> compared to base models.</li>
+                            <li class="bullet-item"><strong>Early Warning Accuracy:</strong> Boosted early degradation stage detection accuracy by <span class="highlight">11%</span>, giving engineering operators longer lead times before failure boundaries are reached.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>4. Remaining Useful Life (RUL) Regression</h3>
+                        <div class="regression-split" style="display: flex; gap: 28px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
+                            <div style="flex: 1 1 300px; min-width: 280px;">
+                                <p class="body-p" style="line-height: 1.6; color: var(--slate-600); font-size: 0.95rem;">
+                                    The aim of this part of the study is to predict the exact number of Remaining Useful Life (RUL) cycles for a jet engine based on sensor readings. We chose a Random Forest Regressor for this task because it handles the non-linear relationship between sensor degradation and time very well. By using an ensemble of decision trees, the model can provide a stable prediction of engine life which is vital for maintenance planning in aviation.
+                                </p>
+                            </div>
+                            <div style="flex: 1.5 1 400px; min-width: 320px;">
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: border-color 0.25s ease;">
+                                    <img src="regression_plot.png" alt="Regression: Actual vs Predicted" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in; transition: transform 0.25s ease;" onclick="openLightbox('regression_plot.png')" class="zoomable-img">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>5. Failure Window Classification</h3>
+                        <div class="classification-split" style="display: flex; gap: 28px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
+                            <div style="flex: 1.5 1 400px; min-width: 320px;">
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: border-color 0.25s ease;">
+                                    <img src="classification_plot.png" alt="Classification Results Confusion Matrix" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in; transition: transform 0.25s ease;" onclick="openLightbox('classification_plot.png')" class="zoomable-img">
+                                </div>
+                            </div>
+                            <div style="flex: 1 1 300px; min-width: 280px;">
+                                <p class="body-p" style="line-height: 1.6; color: var(--slate-600); font-size: 0.95rem;">
+                                    By defining a failure window of 30 cycles, we construct a binary classification model to identify near-failure states. The model achieved a total accuracy of <strong>96.21% (0.9621)</strong> using a tuned Random Forest (n_estimators=100, Gini impurity, random_state=42). The confusion matrix confirms the system correctly identified 3,483 healthy states and 484 failure states, with only 60 false positives and 100 false negatives. This provides a highly reliable early alert system for engineering maintenance.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>6. Unsupervised Lifecycle Clustering</h3>
+                        <div class="unsupervised-split" style="display: flex; gap: 28px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
+                            <div style="flex: 1 1 300px; min-width: 280px;">
+                                <p class="body-p" style="line-height: 1.6; color: var(--slate-600); font-size: 0.95rem;">
+                                    To explore natural lifecycle groupings without using pre-defined labels, we applied K-Means clustering to partition the multidimensional sensor readings (such as pressure, temperature, and vibration patterns). The model successfully identified three distinct clusters corresponding to the <strong>healthy, transitioning, and critical</strong> phases of engine wear. Centroid starting positions were optimised using the <code>k-means++</code> initialisation method with a <code>random_state</code> of 42. While K-Means assumes spherical cluster boundaries, this unsupervised analysis provides objective mathematical validation of the degradation stages used in our supervised models.
+                                </p>
+                            </div>
+                            <div style="flex: 1.5 1 400px; min-width: 320px;">
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: border-color 0.25s ease;">
+                                    <img src="unsupervised_plot.png" alt="Unsupervised K-Means Clusters" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in; transition: transform 0.25s ease;" onclick="openLightbox('unsupervised_plot.png')" class="zoomable-img">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>7. Outcomes</h3>
+                        <p class="body-p">
+                            The object-oriented pipeline successfully forecasts Remaining Useful Life (RUL) limits, classifies critical maintenance windows, and models wear phases via unsupervised clustering. Through this project, I developed proficiency in scientific Python libraries (scikit-learn, pandas, numpy) and prognostic telemetry systems.
+                        </p>
+                    </section>
+                </div>
+
+                <!-- Sticky Sidebar Spec Sheet -->
+                <div class="sidebar-block">
+                    <div class="sidebar-card education-card">
+                        <h4 class="spec-title">PIPELINE ANALYSIS</h4>
+                        <div class="project-specs" style="border: none; padding: 0;">
+                            <div class="spec-row">
+                                <span class="spec-label">PLATFORM</span>
+                                <span class="spec-val">Python 3 (Scikit-Learn)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">DATASET</span>
+                                <span class="spec-val">NASA C-MAPSS (Turbofan)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">FEATURES</span>
+                                <span class="spec-val">21 Sensors, 3 Settings</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">TUNING</span>
+                                <span class="spec-val">Grid Search Tuning</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">ERROR DELTA</span>
+                                <span class="spec-val">-15% Mean Squared Error</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">CLASSIFICATION ACC</span>
+                                <span class="spec-val">96.21% (Random Forest)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        <img id="lightboxImage" class="lightbox-content" src="regression_plot.png" alt="Enlarged View">
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="page-container footer-content">
+            <span class="footer-copy">&copy; 2026 Shaantanu Iyengar. All rights reserved.</span>
+            <span class="footer-design font-mono">Minimalist Indigo Layout</span>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE LIGHTBOX LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            window.openLightbox = function(imgSrc) {
+                lightboxImage.src = imgSrc;
+                lightboxModal.classList.add('active');
+            };
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxModal.classList.remove('active');
+            });
+
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.classList.remove('active');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') lightboxModal.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

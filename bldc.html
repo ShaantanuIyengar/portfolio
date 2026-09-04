@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLDC Motor Drive System &amp; EV Powertrain Simulation | Shaantanu Iyengar</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Shared Stylesheet with Cache Buster -->
+    <link rel="stylesheet" href="style.css?v=7">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-brand">
+                <span class="logo-text" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.5px; color: var(--indigo-600); font-weight: 600;">SYSTEMS &bull; ELECTRONICS &bull; SPACE</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">&larr; Back to Portfolio</a>
+                <a href="Shaantanu_Iyengar_CV.pdf" download="Shaantanu_Iyengar_CV.pdf" class="nav-item" style="color: var(--indigo-600); font-weight: 600;">Download CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Case Study Header -->
+    <section class="case-study-header">
+        <div class="page-container">
+            <a href="index.html" class="back-link">&larr; BACK TO PORTFOLIO</a>
+            <span class="mono-label accent-text mb-2" style="display:block;">PROJECT DETAILS &bull; POWER ELECTRONICS &amp; FEA MODELLING</span>
+            <h1 class="hero-h1 mb-4">BLDC Motor Drive System &amp; EV Powertrain Simulation</h1>
+            <p class="hero-subtitle">An end-to-end EV powertrain co-simulation coupling LTspice inverter circuit power stage with ANSYS Maxwell 2D transient electromagnetic FEA.</p>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="section-bleed">
+        <div class="page-container">
+            <div class="case-study-grid">
+                
+                <!-- Main Narrative -->
+                <div class="case-study-body">
+                    
+                    <!-- Section 01: Wider Project Context -->
+                    <section>
+                        <h3>1. End-to-End System Context &amp; Industrial Relevance</h3>
+                        <p class="body-p">
+                            This project demonstrates a complete end-to-end EV powertrain motor drive simulation, integrating the electrical drive stage in LTspice with the electromagnetic and mechanical motor output stage in ANSYS Maxwell 2D. 
+                        </p>
+                        <ul style="padding-left: 20px; color: var(--slate-600); font-size: 0.95rem; line-height: 1.6; display: flex; flex-direction: column; gap: 8px; margin-top: 10px; margin-bottom: 15px;">
+                            <li><strong>Electrical Drive Synthesis (LTspice):</strong> Models the 3-phase inverter power stage and high-frequency PWM switching logic responsible for converting DC bus power into variable-frequency AC currents.</li>
+                            <li><strong>Electromagnetic FEA (ANSYS Maxwell 2D):</strong> Models transient flux density, spatial saturation, phase currents, and electromagnetic torque output of the motor rotor and stator assembly.</li>
+                            <li><strong>Industry Utility:</strong> Similar virtual prototyping workflows are used by power electronics and electric vehicle engineers at companies such as Tesla, BorgWarner, and Dyson to validate inverter switching and motor torque output prior to building costly hardware.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 02: Part 1 - LTspice Inverter Circuit Simulation -->
+                    <section style="border-top: 1px solid var(--border-color); padding-top: 30px; margin-top: 20px;">
+                        <span class="mono-label accent-text" style="font-size: 0.75rem; display: block; margin-bottom: 6px;">PART 1 &bull; ELECTRICAL DRIVE STAGE</span>
+                        <h3>2. Three-Phase Inverter Circuit Simulation (LTspice)</h3>
+                        <p class="body-p">
+                            The electrical drive stage is a three-phase DC-AC PWM inverter constructed with six STN3N45K3 MOSFETs, converting a 314V DC bus into variable-frequency AC power. 
+                        </p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 15px; margin-bottom: 20px;">
+                            <div class="education-card" style="padding: 20px;">
+                                <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 8px;">Circuit &amp; Waveform Analysis</h4>
+                                <ul style="padding-left: 20px; color: var(--slate-600); font-size: 0.9rem; line-height: 1.5; display: flex; flex-direction: column; gap: 6px;">
+                                    <li><strong>Phase Voltage PWM (Cause):</strong> MOSFETs switch between high and low states, generating high-frequency square waves.</li>
+                                    <li><strong>Synthesised Phase Current (Effect):</strong> LC filtering smooths pulses into 120-degree phase-shifted sinusoidal currents of approximately 15A, proving balanced three-phase power delivery.</li>
+                                    <li><strong>Solver &amp; Stability:</strong> Utilised the SPICE Alternate Solver with Gear integration to resolve high-voltage switching transients and overcome non-ideal component convergence issues.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Three-Phase Inverter Circuit Simulation Images (Full-Width Large View) -->
+                        <div style="display: flex; flex-direction: column; gap: 24px; margin-top: 24px;">
+                            
+                            <!-- Image 1: Circuit Schematic -->
+                            <div class="education-card" style="padding: 20px; text-align: left;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <span class="mono-label accent-text" style="font-size: 0.7rem;">CIRCUIT DIAGRAM</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin: 2px 0 0 0;">Three-Phase Inverter System &mdash; Circuit Schematic</h4>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: var(--slate-500); font-family: var(--font-mono);">Click to Zoom Fullscreen</span>
+                                </div>
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                                    <img src="bldc_inverter_schematic.png" alt="Three-Phase Inverter System - Circuit Schematic" style="width: 100%; max-height: 520px; object-fit: contain; display: block; border-radius: 4px; cursor: zoom-in;" onclick="openLightbox('bldc_inverter_schematic.png')">
+                                </div>
+                                <p style="font-size: 0.88rem; color: var(--slate-600); margin-top: 10px; margin-bottom: 0; line-height: 1.5;">LTspice schematic showing the 314V DC bus feeding three bridge legs (LEG A, LEG B, LEG C) constructed with STN3N45K3 MOSFET switches, gate drive pulse generators, and 10mH three-phase load inductors.</p>
+                            </div>
+                            
+                            <!-- Image 2: PWM Phase Voltage -->
+                            <div class="education-card" style="padding: 20px; text-align: left;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <span class="mono-label accent-text" style="font-size: 0.7rem;">WAVEFORM ANALYSIS &bull; CAUSE</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin: 2px 0 0 0;">High-Frequency PWM Phase Voltage (Cause)</h4>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: var(--slate-500); font-family: var(--font-mono);">Click to Zoom Fullscreen</span>
+                                </div>
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                                    <img src="bldc_pwm_voltage.png" alt="High-Frequency PWM Phase Voltage (Cause) - Waveform" style="width: 100%; max-height: 520px; object-fit: contain; display: block; border-radius: 4px; cursor: zoom-in;" onclick="openLightbox('bldc_pwm_voltage.png')">
+                                </div>
+                                <p style="font-size: 0.88rem; color: var(--slate-600); margin-top: 10px; margin-bottom: 0; line-height: 1.5;">High-speed switching output V(a) pulsing rapidly between 0V and 314V DC to synthesise the fundamental AC voltage envelope.</p>
+                            </div>
+
+                            <!-- Image 3: Output Current -->
+                            <div class="education-card" style="padding: 20px; text-align: left;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <span class="mono-label accent-text" style="font-size: 0.7rem;">WAVEFORM ANALYSIS &bull; EFFECT</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin: 2px 0 0 0;">Synthesised Three-Phase Output Current (Effect)</h4>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: var(--slate-500); font-family: var(--font-mono);">Click to Zoom Fullscreen</span>
+                                </div>
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                                    <img src="bldc_phase_currents.png" alt="Synthesised Three-Phase Output Current (Effect) - Waveform" style="width: 100%; max-height: 520px; object-fit: contain; display: block; border-radius: 4px; cursor: zoom-in;" onclick="openLightbox('bldc_phase_currents.png')">
+                                </div>
+                                <p style="font-size: 0.88rem; color: var(--slate-600); margin-top: 10px; margin-bottom: 0; line-height: 1.5;">Filtered three-phase currents I(L1, L2, L3) showing balanced 120-degree phase displacement and ~15A peak sinusoidal amplitude.</p>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- Section 03: Part 2 - ANSYS Maxwell 2D Computational FEA -->
+                    <section style="border-top: 1px solid var(--border-color); padding-top: 30px; margin-top: 20px;">
+                        <span class="mono-label accent-text" style="font-size: 0.75rem; display: block; margin-bottom: 6px;">PART 2 &bull; ELECTROMAGNETIC &amp; MECHANICAL STAGE</span>
+                        <h3>3. Computational Electromagnetic FEA (ANSYS Maxwell 2D)</h3>
+                        <p class="body-p">
+                            The mechanical output stage uses an ANSYS Maxwell 2D transient electromagnetic solver to simulate magnetic flux density distribution, phase currents, and output torque of the BLDC motor.
+                        </p>
+
+                        <!-- Mathematical Governing Equation Card -->
+                        <div class="education-card mb-4" style="padding: 20px; margin-top: 15px; background: #fafafa;">
+                            <span class="mono-label accent-text" style="font-size: 0.7rem; display: block; margin-bottom: 8px;">GOVERNING VECTOR POTENTIAL DIFFUSION EQUATION</span>
+                            <div style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--slate-900); background: #ffffff; padding: 12px; border-radius: 4px; border: 1px solid var(--border-color); margin-bottom: 10px; overflow-x: auto;">
+                                &nabla; &times; ( (1/&mu;) &nabla; &times; A ) + &sigma;(&part;A / &part;t) = J &nbsp;&nbsp;|&nbsp;&nbsp; B = &nabla; &times; A
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0; line-height: 1.5;">
+                                Where <strong>A</strong> is magnetic vector potential, <strong>&mu;</strong> is magnetic permeability, <strong>&sigma;</strong> is electrical conductivity, and <strong>J</strong> is current density. A vector potential boundary condition of <strong>A = 0 Wb/m</strong> constrains the magnetic field within the solution domain.
+                            </p>
+                        </div>
+
+                        <!-- Solver Setup & Model Configuration Grid -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 15px;">
+                            <div class="education-card" style="padding: 16px;">
+                                <strong style="font-size: 0.85rem; color: var(--indigo-600); font-family: var(--font-mono); display: block; margin-bottom: 4px;">SOLVE SETUP</strong>
+                                <span style="font-size: 0.85rem; color: var(--slate-700); line-height: 1.4; display: block;">Transient setup with stop time 0.2s and fixed time step 0.002s (100 intervals) at 1552.95 rpm.</span>
+                            </div>
+                            <div class="education-card" style="padding: 16px;">
+                                <strong style="font-size: 0.85rem; color: var(--indigo-600); font-family: var(--font-mono); display: block; margin-bottom: 4px;">SOLUTION TYPE</strong>
+                                <span style="font-size: 0.85rem; color: var(--slate-700); line-height: 1.4; display: block;">Transient magnetic with cylindrical-about-Z geometry to compute dynamic rotor movement.</span>
+                            </div>
+                            <div class="education-card" style="padding: 16px;">
+                                <strong style="font-size: 0.85rem; color: var(--indigo-600); font-family: var(--font-mono); display: block; margin-bottom: 4px;">MESH REFINEMENT</strong>
+                                <span style="font-size: 0.85rem; color: var(--slate-700); line-height: 1.4; display: block;">Surface deviation of 0.037mm and normal deviation of 15&deg; across magnets and air-gap.</span>
+                            </div>
+                            <div class="education-card" style="padding: 16px;">
+                                <strong style="font-size: 0.85rem; color: var(--indigo-600); font-family: var(--font-mono); display: block; margin-bottom: 4px;">EXCITATIONS &amp; GEOMETRY</strong>
+                                <span style="font-size: 0.85rem; color: var(--slate-700); line-height: 1.4; display: block;">External stranded windings for phases A, B, C; XG196 permanent magnets on cyan rotor.</span>
+                            </div>
+                        </div>
+
+                        <!-- Computational Electromagnetic FEA Images (Full-Width Large View) -->
+                        <div style="display: flex; flex-direction: column; gap: 24px; margin-top: 24px;">
+                            
+                            <!-- Image 1: FEA Geometry -->
+                            <div class="education-card" style="padding: 20px; text-align: left;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <span class="mono-label accent-text" style="font-size: 0.7rem;">2D FEA MODEL GEOMETRY</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin: 2px 0 0 0;">Geometry &amp; Material Assignment Tree</h4>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: var(--slate-500); font-family: var(--font-mono);">Click to Zoom Fullscreen</span>
+                                </div>
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                                    <img src="bldc_fea_geometry.png" alt="Geometry & Material Assignment Tree in ANSYS Maxwell 2D" style="width: 100%; max-height: 520px; object-fit: contain; display: block; border-radius: 4px; cursor: zoom-in;" onclick="openLightbox('bldc_fea_geometry.png')">
+                                </div>
+                                <p style="font-size: 0.88rem; color: var(--slate-600); margin-top: 10px; margin-bottom: 0; line-height: 1.5;">2D cross-section in ANSYS Maxwell showing the magenta stator core, cyan rotor, copper winding slots, and XG196 permanent magnets alongside the complete project model tree.</p>
+                            </div>
+
+                            <!-- Image 2: Magnetic Flux Density -->
+                            <div class="education-card" style="padding: 20px; text-align: left;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <span class="mono-label accent-text" style="font-size: 0.7rem;">FLUX DISTRIBUTION &bull; SATURATION</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin: 2px 0 0 0;">Magnetic Flux Density Plot (B [mTesla])</h4>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: var(--slate-500); font-family: var(--font-mono);">Click to Zoom Fullscreen</span>
+                                </div>
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                                    <img src="bldc_flux_density.png" alt="Magnetic Flux Density Plot in ANSYS Maxwell 2D" style="width: 100%; max-height: 520px; object-fit: contain; display: block; border-radius: 4px; cursor: zoom-in;" onclick="openLightbox('bldc_flux_density.png')">
+                                </div>
+                                <p style="font-size: 0.88rem; color: var(--slate-600); margin-top: 10px; margin-bottom: 0; line-height: 1.5;">Contour plot illustrating magnetic flux density reaching a peak of 1721.73 mT in the stator teeth, identifying regions approaching magnetic saturation to inform stator core design decisions.</p>
+                            </div>
+
+                            <!-- Image 3: Transient Torque -->
+                            <div class="education-card" style="padding: 20px; text-align: left;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <span class="mono-label accent-text" style="font-size: 0.7rem;">MECHANICAL OUTPUT &bull; TORQUE</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin: 2px 0 0 0;">Transient Torque Output Graph</h4>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: var(--slate-500); font-family: var(--font-mono);">Click to Zoom Fullscreen</span>
+                                </div>
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                                    <img src="bldc_torque_graph.png" alt="Transient Torque Output Graph in ANSYS Maxwell 2D" style="width: 100%; max-height: 520px; object-fit: contain; display: block; border-radius: 4px; cursor: zoom-in;" onclick="openLightbox('bldc_torque_graph.png')">
+                                </div>
+                                <p style="font-size: 0.88rem; color: var(--slate-600); margin-top: 10px; margin-bottom: 0; line-height: 1.5;">Moving torque output plot showing the motor reaching a steady-state mean torque of ~4.4 N&middot;m by 15ms. Periodic steady-state oscillations reflect cogging torque caused by stator slot and rotor pole interactions.</p>
+                            </div>
+
+                            <!-- Image 4: Transient Phase Currents -->
+                            <div class="education-card" style="padding: 20px; text-align: left;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <span class="mono-label accent-text" style="font-size: 0.7rem;">WINDING EXCITATION &bull; CURRENTS</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin: 2px 0 0 0;">Transient Phase Current Graph (Ia, Ib, Ic)</h4>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: var(--slate-500); font-family: var(--font-mono);">Click to Zoom Fullscreen</span>
+                                </div>
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                                    <img src="bldc_fea_currents.png" alt="Transient Phase Current Graph in ANSYS Maxwell 2D" style="width: 100%; max-height: 520px; object-fit: contain; display: block; border-radius: 4px; cursor: zoom-in;" onclick="openLightbox('bldc_fea_currents.png')">
+                                </div>
+                                <p style="font-size: 0.88rem; color: var(--slate-600); margin-top: 10px; margin-bottom: 0; line-height: 1.5;">Phase currents for phases A, B, and C exhibiting typical 120-degree conduction blocks and trapezoidal waveforms, with high-frequency PWM switching ripples visible along the current plateaus.</p>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- Section 04: Utility & Reflection -->
+                    <section style="border-top: 1px solid var(--border-color); padding-top: 30px; margin-top: 20px;">
+                        <h3>4. Critical Reflection &amp; Model Limitations</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 15px;">
+                            <div class="education-card" style="padding: 20px;">
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--slate-900); margin-bottom: 8px;">Circuit Model Evaluation</h4>
+                                <p style="font-size: 0.88rem; color: var(--slate-600); line-height: 1.5; margin: 0;">
+                                    Successfully synthesised a stable high-voltage inverter stage and resolved SPICE solver convergence. Future builds could incorporate dead-time hardware logic to eliminate shoot-through risks, as well as parasitic PCB trace inductances.
+                                </p>
+                            </div>
+                            
+                            <div class="education-card" style="padding: 20px;">
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--slate-900); margin-bottom: 8px;">FEA Model Evaluation</h4>
+                                <p style="font-size: 0.88rem; color: var(--slate-600); line-height: 1.5; margin: 0;">
+                                    Captured spatial flux saturation and torque ripple that circuit solvers miss. Being 2D, it neglects 3D end-winding leakage effects and assumes ideal sinusoidal drive currents rather than real PWM switching harmonics.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sticky Sidebar Spec Sheet -->
+                <div class="sidebar-block">
+                    <div class="sidebar-card education-card">
+                        <h4 class="spec-title">MOTOR DRIVE DOSSIER</h4>
+                        <div class="project-specs" style="border: none; padding: 0;">
+                            <div class="spec-row">
+                                <span class="spec-label">DC BUS VOLTAGE</span>
+                                <span class="spec-val">314V DC</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">TOPOLOGY</span>
+                                <span class="spec-val">3-Phase PWM Inverter</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">MOSFET SWITCHES</span>
+                                <span class="spec-val">6x STN3N45K3</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">PHASE CURRENT</span>
+                                <span class="spec-val">~15A Sinusoidal</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">FEA PLATFORM</span>
+                                <span class="spec-val">ANSYS Maxwell 2D</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">FEA SOLVER</span>
+                                <span class="spec-val">Transient Magnetic</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">SPEED</span>
+                                <span class="spec-val">1552.95 RPM</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">STEADY TORQUE</span>
+                                <span class="spec-val">~4.4 N&middot;m</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">MAGNET GRADE</span>
+                                <span class="spec-val">XG196 Permanent</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">PEAK FLUX B</span>
+                                <span class="spec-val">1721.73 mT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        <img id="lightboxImage" class="lightbox-content" src="" alt="Enlarged View">
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="page-container footer-content">
+            <span class="footer-copy">&copy; 2026 Shaantanu Iyengar. All rights reserved.</span>
+            <span class="footer-design font-mono">Minimalist Indigo Layout</span>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE LIGHTBOX LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            window.openLightbox = function(imgSrc) {
+                if (!imgSrc) return;
+                lightboxImage.src = imgSrc;
+                lightboxModal.classList.add('active');
+            };
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxModal.classList.remove('active');
+            });
+
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.classList.remove('active');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') lightboxModal.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

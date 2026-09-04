@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microprocessor System Design - FPGA Integration Project | Shaantanu Iyengar</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Shared Stylesheet with Cache Buster -->
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-brand">
+                <span class="logo-text" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.5px; color: var(--indigo-600); font-weight: 600;">SYSTEMS &bull; ELECTRONICS &bull; SPACE</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">&larr; Back to Portfolio</a>
+                <a href="Shaantanu_Iyengar_CV.pdf" download="Shaantanu_Iyengar_CV.pdf" class="nav-item" style="color: var(--indigo-600); font-weight: 600;">Download CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Case Study Header -->
+    <section class="case-study-header">
+        <div class="page-container">
+            <a href="index.html" class="back-link">&larr; BACK TO PORTFOLIO</a>
+            <span class="mono-label accent-text mb-2" style="display:block;">PROJECT DETAILS &bull; FPGA INTEGRATION</span>
+            <h1 class="hero-h1 mb-4">Microprocessor System Design - FPGA Integration Project</h1>
+            <p class="hero-subtitle">Custom processor core modelled, verified, and mapped onto FPGA fabric using modular hardware description logic.</p>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="section-bleed">
+        <div class="page-container">
+            <div class="case-study-grid">
+                
+                <!-- Main Narrative -->
+                <div class="case-study-body">
+                    <section>
+                        <h3>1. Project Overview &amp; RTL Design</h3>
+                        <p class="body-p">
+                            Modern digital designs rely heavily on modelling custom processing cores inside FPGA architectures. In this project, I integrated a custom microprocessor system on an FPGA fabric using SystemVerilog. I designed and combined the core logic structures needed to build a functional 8-bit instruction execution unit.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>2. Modelling Core Processor Modules</h3>
+                        <p class="body-p">
+                            The internal logic modules were written inside a hierarchical SystemVerilog design framework. Key components designed include:
+                        </p>
+                        <ul class="bullet-list">
+                            <li class="bullet-item"><strong>Arithmetic Logic Unit (ALU):</strong> Modelled operations-mapped logic to execute arithmetic additions, subtractions, and bitwise boolean logic (AND, OR).</li>
+                            <li class="bullet-item"><strong>Program Counter (PC):</strong> Programmed the fetch clock cycle routing that controls instruction flow.</li>
+                            <li class="bullet-item"><strong>General Registers:</strong> Built internal register files (R0, R1) and the Accumulator (ACC) to facilitate pipeline variables storage.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>3. Hardware Verification &amp; Peripherals Mapping</h3>
+                        <p class="body-p">
+                            To verify instruction execution under timing constraints, I mapped physical hardware peripherals on the FPGA board to internal logical nodes:
+                        </p>
+                        <ul class="bullet-list">
+                            <li class="bullet-item"><strong>Switch Interaction:</strong> Used slide switch arrays to load register inputs manually during hardware test sequences.</li>
+                            <li class="bullet-item"><strong>LED Indicators:</strong> Mapped internal control flags and register outputs to board LEDs to verify correct register write-enables.</li>
+                            <li class="bullet-item"><strong>VGA Video Controller:</strong> Programmed a VGA controller interface to output execution data onto an external monitor screen.</li>
+                        </ul>
+                        <p class="body-p">
+                            Implementing and testing a basic assembly-level instruction set through switch and LED interactions resulted in successful execution, producing visual data output directly on a VGA display.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>4. Outcomes &amp; Takeaways</h3>
+                        <p class="body-p">
+                            The project successfully verified register-transfer-level (RTL) operations. Through this FPGA project, I gained practical experience in hardware design, modular SystemVerilog structure, and diagnostic verification.
+                        </p>
+                    </section>
+                </div>
+
+                <!-- Sticky Sidebar Spec Sheet -->
+                <div class="sidebar-block">
+                    <div class="sidebar-card education-card">
+                        <h4 class="spec-title">RTL SYSTEM SPECS</h4>
+                        <div class="project-specs" style="border: none; padding: 0;">
+                            <div class="spec-row">
+                                <span class="spec-label">HDL COMPILER</span>
+                                <span class="spec-val">SystemVerilog</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">ALU BLOCKS</span>
+                                <span class="spec-val">ADD, SUB, AND, OR</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">REGISTERS</span>
+                                <span class="spec-val">ACC, R0, R1</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">INPUT METHOD</span>
+                                <span class="spec-val">Hardware Slide Switches</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">OUTPUT INTERFACE</span>
+                                <span class="spec-val">LED Telemetry &amp; VGA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="page-container footer-content">
+            <span class="footer-copy">&copy; 2026 Shaantanu Iyengar. All rights reserved.</span>
+            <span class="footer-design font-mono">Minimalist Indigo Layout</span>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous Buck Converter - Circuit and PCB Design | Shaantanu Iyengar</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Shared Stylesheet with Cache Buster -->
+    <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-brand">
+                <span class="logo-text" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.5px; color: var(--indigo-600); font-weight: 600;">SYSTEMS &bull; ELECTRONICS &bull; SPACE</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">&larr; Back to Portfolio</a>
+                <a href="Shaantanu_Iyengar_CV.pdf" download="Shaantanu_Iyengar_CV.pdf" class="nav-item" style="color: var(--slate-900); font-weight: 600;">Download CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Case Study Header -->
+    <section class="case-study-header">
+        <div class="page-container">
+            <a href="index.html" class="back-link">&larr; BACK TO PORTFOLIO</a>
+            <span class="mono-label accent-text mb-2" style="display:block;">PROJECT DETAILS &bull; CIRCUITS &amp; PCB DESIGN</span>
+            <h1 class="hero-h1 mb-4">Synchronous Buck Converter - Circuit and PCB Design</h1>
+            <p class="hero-subtitle">12V &rarr; 5V @ 5A &bull; 300kHz Switching &bull; 4-Layer KiCad Design</p>
+        </div>
+    </section>
+
+    <!-- Case Study Content Grid -->
+    <section class="section-bleed" style="padding-bottom: 20px;">
+        <div class="page-container">
+            <div class="case-study-grid">
+                
+                <!-- Main Narrative Column -->
+                <div class="case-study-body">
+                    
+                    <!-- 1. Overview Block (Border-Left accent, no card box) -->
+                    <div style="border-left: 3px solid var(--indigo-600); padding-left: 20px; margin-bottom: 35px;">
+                        <span class="mono-label accent-text" style="font-size: 0.75rem; display: block; margin-bottom: 6px;">SECTION 01 &bull; OVERVIEW</span>
+                        <p class="body-p mb-4" style="font-size: 1.05rem; font-weight: 500; color: var(--slate-900);">
+                            A synchronous buck converter PCB designed in KiCad to convert 12V to 5V at 5A continuous current, switching at 300kHz.
+                        </p>
+                        <ul style="padding-left: 20px; color: var(--slate-600); font-size: 0.95rem; line-height: 1.6; display: flex; flex-direction: column; gap: 8px;">
+                            <li><strong>Two-Iteration Build:</strong> Developed as an initial 2-layer design built to standard manufacturing guidelines, and a revised 4-layer design incorporating thermal and signal integrity optimisations.</li>
+                            <li><strong>DFM &amp; Datasheet Validation:</strong> Every design decision &mdash; trace widths, via geometry, layer stackup, component placement &mdash; is justified against manufacturer capabilities and component datasheets.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. Circuit Design (Full White Card block) -->
+                    <div class="education-card mb-6" style="padding: 28px;">
+                        <span class="mono-label accent-text" style="font-size: 0.75rem;">SECTION 02 &bull; SCHEMATIC DESIGN</span>
+                        <h3 class="card-title mb-4" style="font-size: 1.25rem; margin-top: 4px;">Circuit Design &amp; ERC Validation</h3>
+                        <ul style="padding-left: 20px; color: var(--slate-600); font-size: 0.95rem; line-height: 1.6; display: flex; flex-direction: column; gap: 8px;">
+                            <li><strong>Silicon Selection:</strong> Centred around a UCC27211 half-bridge gate driver switching two IRFZ44N power MOSFETs.</li>
+                            <li><strong>Custom Footprints:</strong> Created custom schematic symbols and footprints directly from manufacturer datasheets rather than generic library parts &mdash; ensuring every pin assignment matches the physical component exactly.</li>
+                            <li><strong>ERC Clearance:</strong> The full schematic passed KiCad's Electrical Rules Checker with zero violations before layout began.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. Thermal Design (Full White Card block) -->
+                    <div class="education-card mb-6" style="padding: 28px;">
+                        <span class="mono-label accent-text" style="font-size: 0.75rem;">SECTION 03 &bull; THERMAL MANAGEMENT</span>
+                        <h3 class="card-title mb-4" style="font-size: 1.25rem; margin-top: 4px;">Thermal Design Optimisation</h3>
+                        <ul style="padding-left: 20px; color: var(--slate-600); font-size: 0.95rem; line-height: 1.6; display: flex; flex-direction: column; gap: 8px;">
+                            <li><strong>Via Matrix Array:</strong> A 12-via thermal array beneath the MOSFETs, paired with a copper heatspreader and an inner ground plane, conducts heat away from the switching components.</li>
+                            <li><strong>Junction Cooling:</strong> Calculated against the MOSFET datasheet, this brought the junction temperature to roughly 31°C under load &mdash; well within its 175°C rated maximum.</li>
+                            <li><strong>Resistance Cut:</strong> Thermal resistance to the heatsink was cut by more than half compared to the original baseline 2-layer board.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 4. Signal Integrity (Full White Card block with left indigo accent border) -->
+                    <div class="education-card mb-6" style="padding: 28px; border-left: 3px solid var(--indigo-600);">
+                        <span class="mono-label accent-text" style="font-size: 0.75rem;">SECTION 04 &bull; SIGNAL INTEGRITY</span>
+                        <h3 class="card-title mb-4" style="font-size: 1.25rem; margin-top: 4px;">Signal Integrity &amp; Stackup</h3>
+                        <ul style="padding-left: 20px; color: var(--slate-600); font-size: 0.95rem; line-height: 1.6; display: flex; flex-direction: column; gap: 8px;">
+                            <li><strong>Trace Routing:</strong> Gate traces were shortened from 45mm to 12mm and routed alongside the new inner ground plane, reducing trace inductance and pushing the gate ringing frequency from around 20MHz to 54MHz &mdash; eliminating a shoot-through risk.</li>
+                            <li><strong>Decoupling Optimisation:</strong> Tighter decoupling placement cut a voltage spike on the driver's supply pin from 9V to under 0.5V, safely below the driver's switching threshold.</li>
+                            <li><strong>4-Layer Return Path:</strong> Added a dedicated ground plane and power plane. This gave the design a continuous return-current path and a heat-spreading layer that the original 2-layer board couldn't provide.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 5. Attachments (Standard card block) -->
+                    <div class="education-card" style="padding: 28px;">
+                        <span class="mono-label accent-text" style="font-size: 0.75rem;">SECTION 05 &bull; DELIVERABLES</span>
+                        <h3 class="card-title mb-4" style="font-size: 1.25rem; margin-top: 4px;">Design Artifacts &amp; Attachments</h3>
+                        <div class="skills-list" style="margin-top: 15px;">
+                            <div class="skill-row-item" style="padding-bottom: 12px; border-bottom: none;">
+                                <a href="Thermal_Calculations.pdf" target="_blank" class="skill-name" style="text-decoration: none; color: inherit; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--indigo-600)'" onmouseout="this.style.color='inherit'">
+                                    <strong>[PDF]</strong> Thermal Design Calculations
+                                </a>
+                                <a href="Thermal_Calculations.pdf" target="_blank" class="skill-val mono-label" style="color: var(--indigo-600); font-weight: 600; text-decoration: none;">Download / View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sticky Sidebar Spec Sheet -->
+                <div class="sidebar-block" style="display: flex; flex-direction: column; gap: 24px;">
+                    
+                    <!-- Hardware Dossier Card -->
+                    <div class="sidebar-card education-card">
+                        <h4 class="spec-title">HARDWARE DOSSIER</h4>
+                        <div class="project-specs" style="border: none; padding: 0;">
+                            <div class="spec-row">
+                                <span class="spec-label">TOPOLOGY</span>
+                                <span class="spec-val">Synchronous Buck</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">INPUT VOLTAGE</span>
+                                <span class="spec-val">12V DC</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">OUTPUT VOLTAGE</span>
+                                <span class="spec-val">5V DC @ 5A</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">FREQUENCY</span>
+                                <span class="spec-val">300 kHz Switching</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">PCB LAYERS</span>
+                                <span class="spec-val">4-Layer Stackup</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">COPPER WT</span>
+                                <span class="spec-val">2 oz Copper</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">GATE DRIVER</span>
+                                <span class="spec-val">UCC27211 Driver</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">POWER FETS</span>
+                                <span class="spec-val">2x IRFZ44N MOSFETs</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">THERMAL MIN</span>
+                                <span class="spec-val">~31&deg;C under full load</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LARGE INTERACTIVE SCREENSHOT SLIDESHOW AT BOTTOM -->
+    <section class="slideshow-section" style="padding-top: 10px; padding-bottom: 50px;">
+        <div class="page-container">
+            <div class="slideshow-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06);">
+                
+                <!-- Slideshow Header Bar -->
+                <div style="padding: 16px 24px; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <span class="mono-label accent-text" style="font-size: 0.7rem; display: block; margin-bottom: 2px;">DESIGN ARTIFACT GALLERY &bull; SCHEMATIC VIEW</span>
+                        <h3 id="slideTitle" style="font-family: var(--font-heading); color: var(--slate-900); font-size: 1.15rem; font-weight: 700; margin: 0;">Circuit Schematic in KiCAD</h3>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span id="slideCounter" class="mono-label" style="color: var(--slate-600); font-weight: 600;">1 / 5</span>
+                        <button id="fullscreenBtn" title="Toggle Fullscreen Zoom" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                            Fullscreen Zoom
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Display Viewport (Large min-height 550px for readability) -->
+                <div class="slideshow-viewport" style="position: relative; background: #0F1219; min-height: 550px; max-height: 720px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 20px;">
+                    
+                    <!-- Left Nav Button -->
+                    <button id="prevSlide" class="slide-nav-btn" aria-label="Previous slide" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(26, 25, 21, 0.82); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; transition: all 0.2s ease;">
+                        &larr;
+                    </button>
+
+                    <!-- Slide Image Display -->
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <img id="activeSlideImage" src="schematic.png" alt="Circuit Schematic in KiCAD" style="max-width: 100%; max-height: 640px; object-fit: contain; border-radius: 4px; box-shadow: 0 6px 24px rgba(0,0,0,0.6); cursor: zoom-in; transition: opacity 0.25s ease;">
+                    </div>
+
+                    <!-- Right Nav Button -->
+                    <button id="nextSlide" class="slide-nav-btn" aria-label="Next slide" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(26, 25, 21, 0.82); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; transition: all 0.2s ease;">
+                        &rarr;
+                    </button>
+                </div>
+
+                <!-- Slide Caption & Thumbnail Strip -->
+                <div style="padding: 16px 24px; background: var(--bg-card); border-top: 1px solid var(--border-color);">
+                    <p id="slideDesc" class="body-p mb-4" style="font-size: 0.9rem; color: var(--slate-600); line-height: 1.5;">
+                        Full KiCad schematic diagram featuring UCC27211 gate driver, IRFZ44N MOSFETs, custom component footprints, and zero ERC violation verification.
+                    </p>
+                    
+                    <!-- Thumbnails Bar -->
+                    <div id="thumbnailStrip" style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin;">
+                        <!-- Thumbnails populated by JavaScript -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        <img id="lightboxImage" class="lightbox-content" src="schematic.png" alt="Enlarged View">
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="page-container footer-content">
+            <span class="footer-copy">&copy; 2026 Shaantanu Iyengar. All rights reserved.</span>
+            <span class="footer-design font-mono">Minimalist Indigo Layout</span>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SLIDESHOW LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // User-Uploaded Slides Dataset
+            const slides = [
+                {
+                    title: "Circuit Schematic in KiCAD",
+                    image: "schematic.png",
+                    desc: "Full KiCad schematic diagram featuring UCC27211 gate driver, IRFZ44N MOSFETs, custom component footprints, and zero ERC violation verification."
+                },
+                {
+                    title: "Board Layout with Design for Manufacturing Annotations",
+                    image: "dfm_layout.png",
+                    desc: "KiCad PCB Editor layout highlighting DFM annotations: 0.5mm trace width on 2oz copper, 0.3mm thermal via drill size, component courtyard clearances, reference designators outside pad areas, and 0.5mm copper-to-edge clearances per IPC-A-600."
+                },
+                {
+                    title: "Board Layout with Thermal Design Annotations",
+                    image: "thermal_layout.png",
+                    desc: "KiCad PCB Editor layout highlighting thermal annotations: 12-via thermal matrix array conducting heat through to inner ground plane, 2oz F.Cu copper heatspreader, 3mm component keepout zone, Fischer SK104 heatsink mounting holes, and inner GND plane heat distribution."
+                },
+                {
+                    title: "Board Layout with Signal Integrity Annotations",
+                    image: "si_layout.png",
+                    desc: "KiCad PCB Editor layout highlighting signal integrity annotations: gate traces shortened from 45mm to 12mm pushing ringing frequency from 19.6MHz to 53.6MHz, solid In1.Cu GND reference plane directly beneath switching paths, gate driver decoupling placed within 2mm reducing voltage spike from 9.0V to 0.45V, C_boot1 bootstrap capacitor placement, and short SW node routing minimising EMI radiation loop area."
+                },
+                {
+                    title: "3D View of the Board",
+                    image: "board_3d.png",
+                    desc: "KiCad 3D Viewer rendering of the fully assembled 4-layer synchronous buck converter PCB showing physical component placement, heatsink tabs, power inductor, capacitors, and silk screen designator markings."
+                }
+            ];
+
+            let currentIndex = 0;
+
+            const slideTitle = document.getElementById('slideTitle');
+            const slideCounter = document.getElementById('slideCounter');
+            const slideDesc = document.getElementById('slideDesc');
+            const activeSlideImage = document.getElementById('activeSlideImage');
+            const thumbnailStrip = document.getElementById('thumbnailStrip');
+            const prevSlide = document.getElementById('prevSlide');
+            const nextSlide = document.getElementById('nextSlide');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            // Render Thumbnails
+            slides.forEach((slide, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `thumb-btn ${idx === 0 ? 'active' : ''}`;
+                btn.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+                btn.innerHTML = `<img src="${slide.image}" alt="Thumb ${idx + 1}">`;
+                btn.addEventListener('click', () => goToSlide(idx));
+                thumbnailStrip.appendChild(btn);
+            });
+
+            function updateSlide() {
+                const current = slides[currentIndex];
+                
+                // Fade effect
+                activeSlideImage.style.opacity = '0.3';
+                setTimeout(() => {
+                    activeSlideImage.src = current.image;
+                    activeSlideImage.alt = current.title;
+                    slideTitle.textContent = current.title;
+                    slideDesc.textContent = current.desc;
+                    slideCounter.textContent = `${currentIndex + 1} / ${slides.length}`;
+                    activeSlideImage.style.opacity = '1';
+                }, 120);
+
+                // Update active thumbnail
+                const thumbs = thumbnailStrip.querySelectorAll('.thumb-btn');
+                thumbs.forEach((t, i) => {
+                    if (i === currentIndex) {
+                        t.classList.add('active');
+                        t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    } else {
+                        t.classList.remove('active');
+                    }
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlide();
+            }
+
+            function next() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlide();
+            }
+
+            function prev() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlide();
+            }
+
+            prevSlide.addEventListener('click', prev);
+            nextSlide.addEventListener('click', next);
+
+            // Lightbox Modal Functions
+            window.openLightbox = function(imgSrc) {
+                lightboxImage.src = imgSrc || slides[currentIndex].image;
+                lightboxModal.classList.add('active');
+            };
+
+            fullscreenBtn.addEventListener('click', () => openLightbox());
+            activeSlideImage.addEventListener('click', () => openLightbox());
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxModal.classList.remove('active');
+            });
+
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.classList.remove('active');
+                }
+            });
+
+            // Keyboard Arrow Navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+                if (e.key === 'Escape') lightboxModal.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

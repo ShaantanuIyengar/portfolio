@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>180-Degree Ultrasonic Radar System | Shaantanu Iyengar</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Shared Stylesheet with Cache Buster -->
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-brand">
+                <span class="logo-text" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.5px; color: var(--indigo-600); font-weight: 600;">SYSTEMS &bull; ELECTRONICS &bull; SPACE</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">&larr; Back to Portfolio</a>
+                <a href="Shaantanu_Iyengar_CV.pdf" download="Shaantanu_Iyengar_CV.pdf" class="nav-item" style="color: var(--indigo-600); font-weight: 600;">Download CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Case Study Header -->
+    <section class="case-study-header">
+        <div class="page-container">
+            <a href="index.html" class="back-link">&larr; BACK TO PORTFOLIO</a>
+            <span class="mono-label accent-text mb-2" style="display:block;">PROJECT DETAILS &bull; ARDUINO INTERFACING</span>
+            <h1 class="hero-h1 mb-4">180-Degree Ultrasonic Radar System</h1>
+            <p class="hero-subtitle">Physical hardware-software scan setup calibrated to detect and display target distances on a local LCD screen.</p>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="section-bleed">
+        <div class="page-container">
+            <div class="case-study-grid">
+                
+                <!-- Main Narrative -->
+                <div class="case-study-body">
+                    <section>
+                        <h3>1. Project Overview &amp; Background</h3>
+                        <p class="body-p">
+                            Developing mechatronic systems requires a solid understanding of sensor-microcontroller interfacing and timing. This project was engineered to create a functional 180-degree ultrasonic sweep radar. The system scans the surrounding field and calculates distances to log real-time target coordinates.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>2. Hardware Interfacing &amp; Servo Integration</h3>
+                        <p class="body-p">
+                            The physical build consists of a core microcontroller, an ultrasonic transducer sensor, and a micro servo actuator. I developed firmware to coordinate sweep actions:
+                        </p>
+                        <ul class="bullet-list">
+                            <li class="bullet-item"><strong>Hardware Interfacing:</strong> Programmed the pulse-width modulation (PWM) control pins of the Arduino to rotate the micro-servo motor in precise increments from 0° to 180°.</li>
+                            <li class="bullet-item"><strong>Range Telemetry:</strong> Triggered periodic 10μs sound bursts from the ultrasonic sensor. The echo return timing was processed in firmware to calculate target distances.</li>
+                            <li class="bullet-item"><strong>LCD Screen Output:</strong> Integrated a liquid crystal display (LCD) to print the active angle and calculated range parameters on a local hardware screen during operations.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>3. Sensor Calibration &amp; Signal Filtering</h3>
+                        <p class="body-p">
+                            During initial testing, signal reflections, dispersion, and environmental noise introduced measurement offsets of up to &plusmn;10 cm. 
+                        </p>
+                        <p class="body-p">
+                            To resolve these deviations, I calibrated the sensor offset within the controller firmware. Adjusting for hardware alignment delays and physical limitations improved the precision from <span class="highlight">&plusmn;10 cm to &plusmn;6 cm</span>, correcting measurement errors caused by environmental factors and surface reflections.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>4. Outcomes &amp; Takeaways</h3>
+                        <p class="body-p">
+                            The finished ultrasonic radar scans and displays target coordinates reliably. Through this project, I strengthened my skills in mechatronics prototyping, hardware-software integration, and sensor calibration.
+                        </p>
+                    </section>
+                </div>
+
+                <!-- Sticky Sidebar Spec Sheet -->
+                <div class="sidebar-block">
+                    <div class="sidebar-card education-card">
+                        <h4 class="spec-title">PROJECT TELEMETRY</h4>
+                        <div class="project-specs" style="border: none; padding: 0;">
+                            <div class="spec-row">
+                                <span class="spec-label">PLATFORM</span>
+                                <span class="spec-val">Arduino</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">SENSOR TYPE</span>
+                                <span class="spec-val">Ultrasonic HC-SR04</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">SWEEP RANGE</span>
+                                <span class="spec-val">0&deg; to 180&deg;</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">OUTPUT DISPLAY</span>
+                                <span class="spec-val">LCD 1602 Screen</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">PRECISION OFFSET</span>
+                                <span class="spec-val">Calibrated to &plusmn;6 cm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="page-container footer-content">
+            <span class="footer-copy">&copy; 2026 Shaantanu Iyengar. All rights reserved.</span>
+            <span class="footer-design font-mono">Minimalist Indigo Layout</span>
+        </div>
+    </footer>
+
+</body>
+</html>

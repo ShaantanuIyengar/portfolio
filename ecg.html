@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical ECG Signal Processing &amp; FIR Filter Design | Shaantanu Iyengar</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Shared Stylesheet with Cache Buster -->
+    <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-brand">
+                <span class="logo-text" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.5px; color: var(--indigo-600); font-weight: 600;">SYSTEMS &bull; ELECTRONICS &bull; SPACE</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">&larr; Back to Portfolio</a>
+                <a href="Shaantanu_Iyengar_CV.pdf" download="Shaantanu_Iyengar_CV.pdf" class="nav-item" style="color: var(--indigo-600); font-weight: 600;">Download CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Case Study Header -->
+    <section class="case-study-header">
+        <div class="page-container">
+            <a href="index.html" class="back-link">&larr; BACK TO PORTFOLIO</a>
+            <span class="mono-label accent-text mb-2" style="display:block;">PROJECT DETAILS &bull; DSP &amp; SIGNAL PROCESSING</span>
+            <h1 class="hero-h1 mb-4">Clinical ECG Signal Processing &amp; FIR Filter Design</h1>
+            <p class="hero-subtitle">Characterisation and noise attenuation of real-world electrocardiogram signals using custom FIR band-pass filters in MATLAB.</p>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="section-bleed">
+        <div class="page-container">
+            <div class="case-study-grid">
+                
+                <!-- Main Narrative -->
+                <div class="case-study-body">
+                    
+                    <!-- Section 1 -->
+                    <section>
+                        <h3>1. Project Background &amp; Time Series Characterisation</h3>
+                        <p class="body-p">
+                            Refined and characterised a real-world clinical electrocardiogram (ECG) from the MIT-BIH Arrhythmia Database. Source data from PhysioNet was resampled from 360 Hz to 128 Hz for digital analysis, establishing a spectral baseline to design a custom FIR filter.
+                        </p>
+                        
+                        <!-- Specifications Table -->
+                        <div class="education-card mb-4" style="padding: 20px; margin-top: 20px;">
+                            <span class="mono-label accent-text" style="font-size: 0.7rem; display: block; margin-bottom: 10px;">TABLE 1 &bull; TIME SERIES CHARACTERISATION</span>
+                            <div class="project-specs" style="border: none; padding: 0;">
+                                <div class="spec-row" style="padding: 6px 0; border-bottom: 1px solid var(--border-color);">
+                                    <span class="spec-label" style="color: var(--slate-900); font-weight: 600;">Parameter</span>
+                                    <span class="spec-val" style="font-family: var(--font-mono); color: var(--indigo-600); font-weight: 600;">Value</span>
+                                </div>
+                                <div class="spec-row" style="padding: 6px 0; border-bottom: 1px solid var(--border-color);">
+                                    <span class="spec-label">Sampling interval (&Delta;t)</span>
+                                    <span class="spec-val">7.81 ms (1/128 Hz)</span>
+                                </div>
+                                <div class="spec-row" style="padding: 6px 0; border-bottom: 1px solid var(--border-color);">
+                                    <span class="spec-label">Number of samples (N)</span>
+                                    <span class="spec-val">1280</span>
+                                </div>
+                                <div class="spec-row" style="padding: 6px 0; border-bottom: 1px solid var(--border-color);">
+                                    <span class="spec-label">Total recording time</span>
+                                    <span class="spec-val">10 seconds</span>
+                                </div>
+                                <div class="spec-row" style="padding: 6px 0;">
+                                    <span class="spec-label">Fundamental frequency</span>
+                                    <span class="spec-val">1.2 Hz (&approx;72 BPM)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 2 -->
+                    <section>
+                        <h3>2. Frequency Spectrum Analysis</h3>
+                        <div style="display: flex; gap: 28px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
+                            <div style="flex: 1.5 1 400px; min-width: 320px;">
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                                    <img src="ecg_spectrum.png" alt="ECG Spectrum - ps2592 & ssi42" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;" onclick="openLightbox('ecg_spectrum.png')">
+                                </div>
+                            </div>
+                            <div style="flex: 1 1 300px; min-width: 280px;">
+                                <p class="body-p" style="line-height: 1.6; color: var(--slate-600); font-size: 0.95rem;">
+                                    A spectrum analysis of the 10-second ECG recording shows:
+                                </p>
+                                <ul style="padding-left: 20px; color: var(--slate-600); font-size: 0.9rem; line-height: 1.5; display: flex; flex-direction: column; gap: 6px; margin-top: 8px;">
+                                    <li><strong>Dominant Cardiac Peak:</strong> Labeled at 1.20 Hz (approx. 72 BPM) with an amplitude of 0.0187 mV.</li>
+                                    <li><strong>Band Limit Proof:</strong> Spectral energy is concentrated below 20 Hz, confirming that a 0.5 to 40 Hz filter will preserve cardiac waves while rejecting interference.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 3 -->
+                    <section>
+                        <h3>3. Filter Specification &amp; Hamming Window Design</h3>
+                        <div style="display: flex; gap: 28px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
+                            <div style="flex: 1 1 300px; min-width: 280px;">
+                                <p class="body-p" style="line-height: 1.6; color: var(--slate-600); font-size: 0.95rem;">
+                                    Ambulatory ECG signals are corrupted by two main sources of real-world interference:
+                                </p>
+                                <ul style="padding-left: 20px; color: var(--slate-600); font-size: 0.9rem; line-height: 1.5; display: flex; flex-direction: column; gap: 6px; margin-top: 8px; margin-bottom: 8px;">
+                                    <li><strong>Baseline Wander (&lt;0.5 Hz):</strong> Slow low-frequency drift from respiration and movement that shifts the baseline and obscures critical ST-segments.</li>
+                                    <li><strong>High-Frequency Noise (&gt;40 Hz):</strong> Distortion from muscle activity and instrumentation that masks QRS complex details.</li>
+                                </ul>
+                                <p class="body-p" style="line-height: 1.6; color: var(--slate-600); font-size: 0.95rem;">
+                                    We designed a 115-tap FIR band-pass filter (0.5 to 40 Hz) using a Hamming window to achieve the target 46 dB stop-band attenuation, cleaning both noise sources simultaneously.
+                                </p>
+                            </div>
+                            <div style="flex: 1.5 1 400px; min-width: 320px;">
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                                    <img src="ecg_filter.png" alt="Target Filter and Window Properties" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;" onclick="openLightbox('ecg_filter.png')">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4 -->
+                    <section>
+                        <h3>4. Pre- and Post-Filtering Comparison</h3>
+                        <div style="display: flex; gap: 28px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
+                            <div style="flex: 1.5 1 400px; min-width: 320px;">
+                                <div class="zoom-container" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; background: #ffffff; padding: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                                    <img src="ecg_comparison.png" alt="ECG Pre- and Post-filtered comparison" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;" onclick="openLightbox('ecg_comparison.png')">
+                                </div>
+                            </div>
+                            <div style="flex: 1 1 300px; min-width: 280px;">
+                                <p class="body-p" style="line-height: 1.6; color: var(--slate-600); font-size: 0.95rem;">
+                                    Applying the filter resolves both types of interference:
+                                </p>
+                                <ul style="padding-left: 20px; color: var(--slate-600); font-size: 0.9rem; line-height: 1.5; display: flex; flex-direction: column; gap: 6px; margin-top: 8px;">
+                                    <li><strong>Waveform Refinement:</strong> Slowly shifting drift and high-frequency ripples are attenuated while keeping QRS complex heights stable.</li>
+                                    <li><strong>Spectral Filtering:</strong> Attenuates out-of-band noise by 46.02 dB while retaining key pass-band cardiac energy, losing no diagnostic content.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 5 -->
+                    <section>
+                        <h3>5. Outcomes</h3>
+                        <p class="body-p">
+                            The MATLAB implementation successfully isolates clinical cardiac features. A zero-phase filter implementation ensures no temporal shift of critical peak alignments, preserving diagnostic accuracy.
+                        </p>
+                    </section>
+                </div>
+
+                <!-- Sticky Sidebar Spec Sheet -->
+                <div class="sidebar-block">
+                    <div class="sidebar-card education-card">
+                        <h4 class="spec-title">DSP DOSSIER</h4>
+                        <div class="project-specs" style="border: none; padding: 0;">
+                            <div class="spec-row">
+                                <span class="spec-label">DATABASE</span>
+                                <span class="spec-val">MIT-BIH Arrhythmia</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">SAMPLE RATE</span>
+                                <span class="spec-val">128 Hz (Resampled)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">RECORDING LENGTH</span>
+                                <span class="spec-val">10 Seconds</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">FILTER CLASS</span>
+                                <span class="spec-val">FIR Band-Pass</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">PASS-BAND</span>
+                                <span class="spec-val">0.5 &ndash; 40 Hz</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">WINDOW TYPE</span>
+                                <span class="spec-val">Hamming Window</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">FILTER LENGTH</span>
+                                <span class="spec-val">115 Taps</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">STOP-BAND ATT</span>
+                                <span class="spec-val">46.02 dB</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">FUNDAMENTAL FREQ</span>
+                                <span class="spec-val">1.2 Hz (&approx;72 BPM)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        <img id="lightboxImage" class="lightbox-content" src="ecg_spectrum.png" alt="Enlarged View">
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="page-container footer-content">
+            <span class="footer-copy">&copy; 2026 Shaantanu Iyengar. All rights reserved.</span>
+            <span class="footer-design font-mono">Minimalist Indigo Layout</span>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE LIGHTBOX LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            window.openLightbox = function(imgSrc) {
+                lightboxImage.src = imgSrc;
+                lightboxModal.classList.add('active');
+            };
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxModal.classList.remove('active');
+            });
+
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.classList.remove('active');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') lightboxModal.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
