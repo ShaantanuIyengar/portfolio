@@ -1,4 +1,4 @@
-# Personal Engineering Portfolio — Shaantanu Iyengar
+# Personal Engineering Portfolio - Shaantanu Iyengar
 
 Welcome to my personal engineering portfolio repository! This website showcases my projects, practical design work, and technical capabilities as an **Electronic Engineering with Space Science and Technology** student at the **University of Bath** (expected graduation June 2028).
 
@@ -20,7 +20,7 @@ I designed and developed this website using lightweight, modern web standards to
    * Characterisation and refinement of clinical ECG data from the PhysioNet MIT-BIH Arrhythmia Database.
    * Features spectrum analysis, Hamming window parameter selection, and a 115-tap FIR band-pass filter design (0.5 Hz - 40 Hz) eliminating baseline wander and muscle noise.
 
-3. **Synchronous Buck Converter — Circuit & PCB Design** (`buck.html`)
+3. **Synchronous Buck Converter - Circuit & PCB Design** (`buck.html`)
    * 4-layer KiCad PCB design converting 12V to 5V at 5A continuous load current, switching at 300kHz.
    * Complete thermal management calculations, component placement, DFM layout constraints, and parasitic inductance minimisation.
 
